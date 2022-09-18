@@ -1,0 +1,4 @@
+# depslib dependency file v1.0
+1662470106 source:c:\users\sivaprakash k\desktop\button_press\fuse.c
+	<avr/io.h>
+

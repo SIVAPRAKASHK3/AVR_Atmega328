@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1663394361 source:c:\users\sivaprakash k\desktop\timers\fuse.c
+	<avr/io.h>
+
+1663494311 source:c:\users\sivaprakash k\desktop\timers\main.c
+	<avr/delay.h>
+	<avr/io.h>
+

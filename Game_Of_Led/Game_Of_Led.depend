@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1662881477 source:c:\users\sivaprakash k\desktop\game_of_led\fuse.c
+	<avr/io.h>
+
+1663250929 source:c:\users\sivaprakash k\desktop\game_of_led\main.c
+	<avr/io.h>
+	<util/delay.h>
+

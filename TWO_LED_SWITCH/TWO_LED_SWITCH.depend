@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1662475186 source:c:\users\sivaprakash k\desktop\two_led_switch\fuse.c
+	<avr/io.h>
+
+1662476149 source:c:\users\sivaprakash k\desktop\two_led_switch\main.c
+	<avr/io.h>
+	<util/delay.h>
+
