@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1663600778 source:c:\users\sivaprakash k\desktop\intr\fuse.c
+	<avr/io.h>
+
+1663602376 source:c:\users\sivaprakash k\desktop\intr\main.c
+	<avr/io.h>
+	<avr/interrupt.h>
+

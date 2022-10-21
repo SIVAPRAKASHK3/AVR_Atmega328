@@ -1,0 +1,158 @@
+
+bin\Debug\INTR.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000102  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .fuse         00000003  00820000  00820000  00000176  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .debug_aranges 00000020  00000000  00000000  00000179  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  3 .debug_pubnames 00000043  00000000  00000000  00000199  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_info   00000138  00000000  00000000  000001dc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_abbrev 000000c9  00000000  00000000  00000314  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_line   00000105  00000000  00000000  000003dd  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_frame  00000030  00000000  00000000  000004e4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_str    0000009b  00000000  00000000  00000514  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+   8:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+   c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  10:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  14:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  18:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  1c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  20:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  24:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  28:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  2c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  30:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  34:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  38:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  3c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  40:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  44:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  48:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  4c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  50:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  54:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  58:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  5c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  60:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  64:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+  74:	0e 94 40 00 	call	0x80	; 0x80 <main>
+  78:	0c 94 7f 00 	jmp	0xfe	; 0xfe <_exit>
+
+0000007c <__bad_interrupt>:
+  7c:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000080 <main>:
+ */
+
+#include <avr/io.h>
+#include <avr/interrupt.h>
+int main(void)
+{
+  80:	df 93       	push	r29
+  82:	cf 93       	push	r28
+  84:	cd b7       	in	r28, 0x3d	; 61
+  86:	de b7       	in	r29, 0x3e	; 62
+sei();
+  88:	78 94       	sei
+DDRD |=1<<PIN1;
+  8a:	aa e2       	ldi	r26, 0x2A	; 42
+  8c:	b0 e0       	ldi	r27, 0x00	; 0
+  8e:	ea e2       	ldi	r30, 0x2A	; 42
+  90:	f0 e0       	ldi	r31, 0x00	; 0
+  92:	80 81       	ld	r24, Z
+  94:	82 60       	ori	r24, 0x02	; 2
+  96:	8c 93       	st	X, r24
+TCCR1B |=1<<CS10|1<<CS11|1<<WGM12; //TCCR1B BECAUSE THIS REGISTER ONLY HAS PRESCALER
+  98:	a1 e8       	ldi	r26, 0x81	; 129
+  9a:	b0 e0       	ldi	r27, 0x00	; 0
+  9c:	e1 e8       	ldi	r30, 0x81	; 129
+  9e:	f0 e0       	ldi	r31, 0x00	; 0
+  a0:	80 81       	ld	r24, Z
+  a2:	8b 60       	ori	r24, 0x0B	; 11
+  a4:	8c 93       	st	X, r24
+TIMSK1 =1<<OCIE1A;
+  a6:	ef e6       	ldi	r30, 0x6F	; 111
+  a8:	f0 e0       	ldi	r31, 0x00	; 0
+  aa:	82 e0       	ldi	r24, 0x02	; 2
+  ac:	80 83       	st	Z, r24
+OCR1A =9999;
+  ae:	e8 e8       	ldi	r30, 0x88	; 136
+  b0:	f0 e0       	ldi	r31, 0x00	; 0
+  b2:	8f e0       	ldi	r24, 0x0F	; 15
+  b4:	97 e2       	ldi	r25, 0x27	; 39
+  b6:	91 83       	std	Z+1, r25	; 0x01
+  b8:	80 83       	st	Z, r24
+  ba:	ff cf       	rjmp	.-2      	; 0xba <main+0x3a>
+
+000000bc <VECTOR>:
+
+    }
+
+    return 0;
+}
+ISR(VECTOR){
+  bc:	1f 92       	push	r1
+  be:	0f 92       	push	r0
+  c0:	0f b6       	in	r0, 0x3f	; 63
+  c2:	0f 92       	push	r0
+  c4:	11 24       	eor	r1, r1
+  c6:	8f 93       	push	r24
+  c8:	af 93       	push	r26
+  ca:	bf 93       	push	r27
+  cc:	ef 93       	push	r30
+  ce:	ff 93       	push	r31
+  d0:	df 93       	push	r29
+  d2:	cf 93       	push	r28
+  d4:	cd b7       	in	r28, 0x3d	; 61
+  d6:	de b7       	in	r29, 0x3e	; 62
+PORTD |=1<<PIN1;
+  d8:	ab e2       	ldi	r26, 0x2B	; 43
+  da:	b0 e0       	ldi	r27, 0x00	; 0
+  dc:	eb e2       	ldi	r30, 0x2B	; 43
+  de:	f0 e0       	ldi	r31, 0x00	; 0
+  e0:	80 81       	ld	r24, Z
+  e2:	82 60       	ori	r24, 0x02	; 2
+  e4:	8c 93       	st	X, r24
+}
+  e6:	cf 91       	pop	r28
+  e8:	df 91       	pop	r29
+  ea:	ff 91       	pop	r31
+  ec:	ef 91       	pop	r30
+  ee:	bf 91       	pop	r27
+  f0:	af 91       	pop	r26
+  f2:	8f 91       	pop	r24
+  f4:	0f 90       	pop	r0
+  f6:	0f be       	out	0x3f, r0	; 63
+  f8:	0f 90       	pop	r0
+  fa:	1f 90       	pop	r1
+  fc:	18 95       	reti
+
+000000fe <_exit>:
+  fe:	f8 94       	cli
+
+00000100 <__stop_program>:
+ 100:	ff cf       	rjmp	.-2      	; 0x100 <__stop_program>

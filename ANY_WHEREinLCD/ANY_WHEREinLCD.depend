@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1664262305 source:c:\users\sivaprakash k\desktop\any_whereinlcd\fuse.c
+	<avr/io.h>
+
+1664264573 source:c:\users\sivaprakash k\desktop\any_whereinlcd\main.c
+	<avr/io.h>
+	"lcd_header.h"
+
+1664264668 c:\users\sivaprakash k\desktop\any_whereinlcd\lcd_header.h
+	<avr/delay.h>
+	<avr/io.h>
+	<stdlib.h>
+

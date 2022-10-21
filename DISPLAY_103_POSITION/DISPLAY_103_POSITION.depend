@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1664184690 source:c:\users\sivaprakash k\desktop\display_103_position\fuse.c
+	<avr/io.h>
+
+1664199799 source:c:\users\sivaprakash k\desktop\display_103_position\lcd_header.c
+	"lcd_defines.h"
+
+1664200637 c:\users\sivaprakash k\desktop\display_103_position\lcd_defines.h
+	<avr/delay.h>
+	<avr/io.h>
+	<stdlib.h>
+
+1664200439 source:c:\users\sivaprakash k\desktop\display_103_position\main.c
+	<avr/delay.h>
+	<avr/io.h>
+	"lcd.c"
+	<stdlib.h>
+	"lcd_defines.h"
+	"lcd_header.c"
+
+1664199799 c:\users\sivaprakash k\desktop\display_103_position\lcd_header.c
+	"lcd_defines.h"
+
+1664261074 c:\users\sivaprakash k\desktop\display_103_position\lcd.c
+	"lcd_defines.h"
+

@@ -1,0 +1,7 @@
+
+Circuit: ANYLOCATION_AS_YOURWISH.simu
+
+Bill of Materials:
+
+Hd44780-2 : Hd44780   
+atmega328-1 : atmega328   
