@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1666623218 source:c:\users\sivaprakash k\desktop\uart2\fuse.c
+	<avr/io.h>
+
+1666777942 source:c:\users\sivaprakash k\desktop\uart2\main.c
+	<avr/io.h>
+

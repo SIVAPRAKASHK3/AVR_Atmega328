@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1666425400 source:c:\users\sivaprakash k\desktop\uart_data_send_ledblink\fuse.c
+	<avr/io.h>
+
+1666775133 source:c:\users\sivaprakash k\desktop\uart_data_send_ledblink\main.c
+	<avr/io.h>
+
