@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1667567164 source:c:\users\sivaprakash k\desktop\crystal_oscillator_led_blink\fuse.c
+	<avr/io.h>
+
+1667567248 source:c:\users\sivaprakash k\desktop\crystal_oscillator_led_blink\main.c
+	<avr/io.h>
+	<avr/delay.h>
+
